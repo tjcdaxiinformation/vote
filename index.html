@@ -1,203 +1,185 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="zh-TW">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.4">
-  <style type="text/css">
-    body {background-color: #eef2f7}
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; -webkit-text-stroke: #000000}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; -webkit-text-stroke: #000000; min-height: 15.0px}
-    span.s1 {font-kerning: none}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第25屆西區信徒代表會代表選舉系統</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
-<body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
-<p class="p1"><span class="s1">&lt;html lang="zh-TW"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;head&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;第25屆西區信徒代表會代表選舉系統&lt;/title&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script src="https://unpkg.com/vue@3/dist/vue.global.js"&gt;&lt;/script&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
-<p class="p1"><span class="s1">&lt;body class="bg-gray-50 min-h-screen py-8 px-4 font-sans text-gray-800"&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="app" class="max-w-4xl mx-auto space-y-8"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;header class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-3"&gt;第 25 屆西區信徒代表會代表選舉&lt;/h1&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="inline-block bg-blue-50 text-blue-800 px-4 py-2 rounded-lg text-sm font-medium border border-blue-100"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>📌 投票規則：請圈選共三名（含教牧當然代表）。系統已為您自動勾選當然代表，請再選 2 名。</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/header&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;main class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="p-6 border-b border-gray-100 bg-gray-50/50 flex justify-between items-center"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h2 class="text-xl font-bold text-gray-900"&gt;🗳️ 電子選票&lt;/h2&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;span class="text-sm text-gray-500"&gt;已選擇：&lt;strong class="text-blue-600 text-lg"&gt;{{ selectedCount }}&lt;/strong&gt; / 3 名&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="overflow-x-auto"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;table class="w-full text-left border-collapse"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;thead&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;tr class="bg-gray-100 text-gray-700 text-sm uppercase tracking-wider border-b border-gray-200"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;th class="py-4 px-6 text-center w-24"&gt;圈(勾)選&lt;/th&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;th class="py-4 px-4"&gt;姓名&lt;/th&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;th class="py-4 px-4 w-16"&gt;性別&lt;/th&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;th class="py-4 px-4 w-16"&gt;年齡&lt;/th&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;th class="py-4 px-4"&gt;所屬教會&lt;/th&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;th class="py-4 px-4"&gt;學歷&lt;/th&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;th class="py-4 px-4"&gt;現任職務&lt;/th&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/tr&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/thead&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;tbody class="divide-y divide-gray-100 text-gray-700"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;tr v-for="candidate in candidates" :key="candidate.id"<span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>:class="{'bg-blue-50/40': candidate.checked, 'hover:bg-gray-50': !candidate.isEssential}"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>class="transition-colors"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                            </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;td class="py-4 px-6 text-center"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;input type="checkbox"<span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                                       </span>v-model="candidate.checked"<span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                                       </span>:disabled="candidate.isEssential || (selectedCount &gt;= 3 &amp;&amp; !candidate.checked)"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                                       </span>@change="validateSelection"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                                       </span>class="w-5 h-5 text-blue-600 rounded border-gray-300 focus:ring-blue-500 disabled:opacity-60 disabled:cursor-not-allowed"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/td&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                            </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;td class="py-4 px-4 font-medium text-gray-950"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>{{ candidate.name }}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;span v-if="candidate.isEssential" class="ml-2 text-xs bg-red-100 text-red-700 px-2 py-0.5 rounded-full font-semibold"&gt;當然代表&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/td&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;td class="py-4 px-4"&gt;{{ candidate.gender }}&lt;/td&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;td class="py-4 px-4"&gt;{{ candidate.age }}&lt;/td&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;td class="py-4 px-4"&gt;{{ candidate.church }}&lt;/td&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;td class="py-4 px-4"&gt;{{ candidate.education }}&lt;/td&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;td class="py-4 px-4"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;span class="px-2.5 py-1 rounded-md text-sm font-medium"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                                      </span>:class="candidate.isEssential ? 'bg-purple-100 text-purple-700' : 'bg-gray-100 text-gray-600'"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>{{ candidate.title }}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/td&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/tr&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/tbody&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/table&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="p-6 bg-gray-50 border-t border-gray-100 flex justify-end"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button @click="submitVote"<span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>:disabled="selectedCount !== 3"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>class="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-md hover:shadow-lg transition-all disabled:bg-gray-300 disabled:shadow-none disabled:cursor-not-allowed"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>確認送出選票</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/main&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;section class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-gray-100 pb-4 mb-6 gap-4"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-xl font-bold text-gray-900 flex items-center gap-2"&gt;📊 即時開票數據看板&lt;/h2&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm text-gray-500 mt-1"&gt;每次點擊上方送出選票，下方數據與圖表將即時更新&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="bg-emerald-50 border border-emerald-100 px-4 py-2 rounded-xl text-right"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;span class="text-xs text-emerald-700 block font-medium"&gt;目前已投總票數&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;strong class="text-2xl text-emerald-800 font-black"&gt;{{ totalVotes }} &lt;span class="text-sm font-normal"&gt;張&lt;/span&gt;&lt;/strong&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="space-y-4"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div v-for="candidate in sortedCandidates" :key="'report-' + candidate.id" class="space-y-2"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="flex justify-between text-sm font-medium text-gray-700"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div class="flex items-center gap-2"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;span class="w-16 font-bold text-gray-900"&gt;{{ candidate.name }}&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;span class="text-xs bg-gray-100 px-2 py-0.5 rounded text-gray-500"&gt;{{ candidate.title }}&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div class="font-semibold text-gray-900"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>{{ candidate.votes }} 票<span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;span class="text-xs text-gray-400 ml-1"&gt;({{ getPercentage(candidate.votes) }}%)&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="w-full bg-gray-100 h-4 rounded-full overflow-hidden"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div class="h-full bg-blue-500 rounded-full transition-all duration-500 ease-out"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                             </span>:class="{'bg-purple-500': candidate.isEssential}"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                             </span>:style="{ width: getPercentage(candidate.votes) + '%' }"&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const { createApp, ref, computed } = Vue;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>createApp({</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>setup() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>// 初始化候選人資料 (比照圖片)</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const candidates = ref([</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ id: 1, name: "梁秀娟", gender: "女", age: 51, church: "大溪", education: "大學", title: "教牧", isEssential: true, checked: true, votes: 12 },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ id: 2, name: "王鴻志", gender: "男", age: 52, church: "大溪", education: "大專", title: "宣道", isEssential: false, checked: false, votes: 8 },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ id: 3, name: "張蓉惠", gender: "女", age: 26, church: "大溪", education: "大學", title: "教育", isEssential: false, checked: false, votes: 5 },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ id: 4, name: "楊忠生", gender: "男", age: 52, church: "大溪", education: "專科", title: "事務", isEssential: false, checked: false, votes: 9 },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ id: 5, name: "林茜葦", gender: "女", age: 48, church: "大溪", education: "大專", title: "資訊", isEssential: false, checked: false, votes: 4 },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ id: 6, name: "鍾霖恩", gender: "男", age: 42, church: "大溪", education: "大學", title: "會計", isEssential: false, checked: false, votes: 7 },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ id: 7, name: "黃琬珊", gender: "女", age: 40, church: "大溪", education: "大學", title: "出納", isEssential: false, checked: false, votes: 3 }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>]);</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>// 計算目前勾選了幾個人</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const selectedCount = computed(() =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>return candidates.value.filter(c =&gt; c.checked).length;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>});</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>// 計算總票數 (以教牧的票數作為總票數基準，因為每張票必有教牧)</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const totalVotes = computed(() =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>const essential = candidates.value.find(c =&gt; c.isEssential);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>return essential ? essential.votes : 0;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>});</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>// 排序後的候選人（按票數從高到低排，開票畫面更直觀）</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const sortedCandidates = computed(() =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>return [...candidates.value].sort((a, b) =&gt; b.votes - a.votes);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>});</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>// 計算得票百分比</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const getPercentage = (votes) =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>if (totalVotes.value === 0) return 0;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>return ((votes / totalVotes.value) * 100).toFixed(1);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>};</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>// 投票送出事件</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const submitVote = () =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>if (selectedCount.value !== 3) return;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>// 模擬寫入資料庫：將勾選的人票數 +1</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>candidates.value.forEach(c =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>if (c.checked) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>c.votes += 1;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>});</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>alert("🎉 投票成功！感謝您的參與。");</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>// 重設選票狀態（教牧保持預設勾選，其餘清空）</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>candidates.value.forEach(c =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>if (!c.isEssential) c.checked = false;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>});</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>};</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>return {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>candidates,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>selectedCount,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>totalVotes,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>sortedCandidates,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>getPercentage,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>submitVote</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>};</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}).mount('#app');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+<body class="bg-gray-50 min-h-screen py-8 px-4 font-sans text-gray-800">
+
+    <div id="app" class="max-w-4xl mx-auto space-y-8">
+        
+        <header class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center">
+            <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-3">第 25 屆西區信徒代表會代表選舉</h1>
+            <div class="inline-block bg-blue-50 text-blue-800 px-4 py-2 rounded-lg text-sm font-medium border border-blue-100">
+                📌 投票規則：請圈選共三名（含教牧當然代表）。系統已為您自動勾選當然代表，請再選 2 名。
+            </div>
+        </header>
+
+        <main class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+            <div class="p-6 border-b border-gray-100 bg-gray-50/50 flex justify-between items-center">
+                <h2 class="text-xl font-bold text-gray-900">🗳️ 電子選票</h2>
+                <span class="text-sm text-gray-500">已選擇：<strong class="text-blue-600 text-lg">{{ selectedCount }}</strong> / 3 名</span>
+            </div>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-gray-100 text-gray-700 text-sm uppercase tracking-wider border-b border-gray-200">
+                            <th class="py-4 px-6 text-center w-24">圈(勾)選</th>
+                            <th class="py-4 px-4">姓名</th>
+                            <th class="py-4 px-4 w-16">性別</th>
+                            <th class="py-4 px-4 w-16">年齡</th>
+                            <th class="py-4 px-4">所屬教會</th>
+                            <th class="py-4 px-4">學歷</th>
+                            <th class="py-4 px-4">現任職務</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100 text-gray-700">
+                        <tr v-for="candidate in candidates" :key="candidate.id" 
+                            :class="{'bg-blue-50/40': candidate.checked, 'hover:bg-gray-50': !candidate.isEssential}"
+                            class="transition-colors">
+                            
+                            <td class="py-4 px-6 text-center">
+                                <input type="checkbox" 
+                                       v-model="candidate.checked" 
+                                       :disabled="candidate.isEssential || (selectedCount >= 3 && !candidate.checked)"
+                                       @change="validateSelection"
+                                       class="w-5 h-5 text-blue-600 rounded border-gray-300 focus:ring-blue-500 disabled:opacity-60 disabled:cursor-not-allowed">
+                            </td>
+                            
+                            <td class="py-4 px-4 font-medium text-gray-950">
+                                {{ candidate.name }}
+                                <span v-if="candidate.isEssential" class="ml-2 text-xs bg-red-100 text-red-700 px-2 py-0.5 rounded-full font-semibold">當然代表</span>
+                            </td>
+                            <td class="py-4 px-4">{{ candidate.gender }}</td>
+                            <td class="py-4 px-4">{{ candidate.age }}</td>
+                            <td class="py-4 px-4">{{ candidate.church }}</td>
+                            <td class="py-4 px-4">{{ candidate.education }}</td>
+                            <td class="py-4 px-4">
+                                <span class="px-2.5 py-1 rounded-md text-sm font-medium"
+                                      :class="candidate.isEssential ? 'bg-purple-100 text-purple-700' : 'bg-gray-100 text-gray-600'">
+                                    {{ candidate.title }}
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="p-6 bg-gray-50 border-t border-gray-100 flex justify-end">
+                <button @click="submitVote" 
+                        :disabled="selectedCount !== 3"
+                        class="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-md hover:shadow-lg transition-all disabled:bg-gray-300 disabled:shadow-none disabled:cursor-not-allowed">
+                    確認送出選票
+                </button>
+            </div>
+        </main>
+
+        <section class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-gray-100 pb-4 mb-6 gap-4">
+                <div>
+                    <h2 class="text-xl font-bold text-gray-900 flex items-center gap-2">📊 即時開票數據看板</h2>
+                    <p class="text-sm text-gray-500 mt-1">每次點擊上方送出選票，下方數據與圖表將即時更新</p>
+                </div>
+                <div class="bg-emerald-50 border border-emerald-100 px-4 py-2 rounded-xl text-right">
+                    <span class="text-xs text-emerald-700 block font-medium">目前已投總票數</span>
+                    <strong class="text-2xl text-emerald-800 font-black">{{ totalVotes }} <span class="text-sm font-normal">張</span></strong>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <div v-for="candidate in sortedCandidates" :key="'report-' + candidate.id" class="space-y-2">
+                    <div class="flex justify-between text-sm font-medium text-gray-700">
+                        <div class="flex items-center gap-2">
+                            <span class="w-16 font-bold text-gray-900">{{ candidate.name }}</span>
+                            <span class="text-xs bg-gray-100 px-2 py-0.5 rounded text-gray-500">{{ candidate.title }}</span>
+                        </div>
+                        <div class="font-semibold text-gray-900">
+                            {{ candidate.votes }} 票 
+                            <span class="text-xs text-gray-400 ml-1">({{ getPercentage(candidate.votes) }}%)</span>
+                        </div>
+                    </div>
+                    <div class="w-full bg-gray-100 h-4 rounded-full overflow-hidden">
+                        <div class="h-full bg-blue-500 rounded-full transition-all duration-500 ease-out"
+                             :class="{'bg-purple-500': candidate.isEssential}"
+                             :style="{ width: getPercentage(candidate.votes) + '%' }"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        const { createApp, ref, computed } = Vue;
+
+        createApp({
+            setup() {
+                // 初始化候選人資料 (比照圖片)
+                const candidates = ref([
+                    { id: 1, name: "梁秀娟", gender: "女", age: 51, church: "大溪", education: "大學", title: "教牧", isEssential: true, checked: true, votes: 12 },
+                    { id: 2, name: "王鴻志", gender: "男", age: 52, church: "大溪", education: "大專", title: "宣道", isEssential: false, checked: false, votes: 8 },
+                    { id: 3, name: "張蓉惠", gender: "女", age: 26, church: "大溪", education: "大學", title: "教育", isEssential: false, checked: false, votes: 5 },
+                    { id: 4, name: "楊忠生", gender: "男", age: 52, church: "大溪", education: "專科", title: "事務", isEssential: false, checked: false, votes: 9 },
+                    { id: 5, name: "林茜葦", gender: "女", age: 48, church: "大溪", education: "大專", title: "資訊", isEssential: false, checked: false, votes: 4 },
+                    { id: 6, name: "鍾霖恩", gender: "男", age: 42, church: "大溪", education: "大學", title: "會計", isEssential: false, checked: false, votes: 7 },
+                    { id: 7, name: "黃琬珊", gender: "女", age: 40, church: "大溪", education: "大學", title: "出納", isEssential: false, checked: false, votes: 3 }
+                ]);
+
+                // 計算目前勾選了幾個人
+                const selectedCount = computed(() => {
+                    return candidates.value.filter(c => c.checked).length;
+                });
+
+                // 計算總票數 (以教牧的票數作為總票數基準，因為每張票必有教牧)
+                const totalVotes = computed(() => {
+                    const essential = candidates.value.find(c => c.isEssential);
+                    return essential ? essential.votes : 0;
+                });
+
+                // 排序後的候選人（按票數從高到低排，開票畫面更直觀）
+                const sortedCandidates = computed(() => {
+                    return [...candidates.value].sort((a, b) => b.votes - a.votes);
+                });
+
+                // 計算得票百分比
+                const getPercentage = (votes) => {
+                    if (totalVotes.value === 0) return 0;
+                    return ((votes / totalVotes.value) * 100).toFixed(1);
+                };
+
+                // 投票送出事件
+                const submitVote = () => {
+                    if (selectedCount.value !== 3) return;
+
+                    // 模擬寫入資料庫：將勾選的人票數 +1
+                    candidates.value.forEach(c => {
+                        if (c.checked) {
+                            c.votes += 1;
+                        }
+                    });
+
+                    alert("🎉 投票成功！感謝您的參與。");
+
+                    // 重設選票狀態（教牧保持預設勾選，其餘清空）
+                    candidates.value.forEach(c => {
+                        if (!c.isEssential) c.checked = false;
+                    });
+                };
+
+                return {
+                    candidates,
+                    selectedCount,
+                    totalVotes,
+                    sortedCandidates,
+                    getPercentage,
+                    submitVote
+                };
+            }
+        }).mount('#app');
+    </script>
 </body>
 </html>
